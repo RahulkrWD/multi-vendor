@@ -13,7 +13,7 @@ export async function checkUserLogin() {
   let user = users.find((u) => u.id === loggedInUser);
   let nav = document.getElementById("navbar");
 
-  if (user) {
+  if (user?.role == "customer") {
     nav.innerHTML = `
       <div class="navbar-item">
         <h3><a class="title" href="index.html">Shoppy</a></h3>
