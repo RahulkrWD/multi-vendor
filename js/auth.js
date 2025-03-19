@@ -1,9 +1,8 @@
 import { baseurl } from "./firebase.js";
-import { showMessage, showLoadingBar, hideLoadingBar } from "./utils.js";
+import { showMessage } from "./utils.js";
 
 // Register new user
 export async function CreateUser(event) {
-  showLoadingBar();
   event.preventDefault();
   let name = document.getElementById("name").value.trim();
   let email = document.getElementById("email").value.trim();
@@ -23,6 +22,7 @@ export async function CreateUser(event) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     });
+
     if (newUser.ok) {
       showMessage("green", "Registration Successful!");
       setTimeout(() => (window.location.href = "login.html"), 1000);
@@ -31,14 +31,11 @@ export async function CreateUser(event) {
     }
   } catch (error) {
     showMessage("red", "Something went wrong!");
-  } finally {
-    hideLoadingBar();
   }
 }
 
 // User login
 export async function LoginUser(event) {
-  showLoadingBar();
   event.preventDefault();
   let email = document.getElementById("email").value.trim();
   let password = document.getElementById("password").value.trim();
@@ -51,6 +48,7 @@ export async function LoginUser(event) {
       : [];
 
     let user = users.find((u) => u.email === email && u.password === password);
+
     if (user) {
       showMessage("green", "Login Successful!");
       localStorage.setItem("user", user.id);
@@ -60,13 +58,11 @@ export async function LoginUser(event) {
     }
   } catch (error) {
     showMessage("red", "Something went wrong!");
-  } finally {
-    hideLoadingBar();
   }
 }
 
-// user Logout
-export function LogoutUser() {
-  localStorage.removeItem("user");
-  window.location.href = "login.html";
-}
+// // Logout user
+// export function LogoutUser() {
+//   localStorage.removeItem("user");
+//   window.location.href = "login.html";
+// }

@@ -10,10 +10,27 @@
             rel="stylesheet">
     </head>
     <body>
-        <div id="loading-bar"></div>
-
         <header>
-            <nav id="navbar"></nav>
+            <nav class="navbar-item">
+                <h3><a class="title" href="index.html">Shoppy</a></h3>
+                <div class="search-container">
+                    <input class="search" id="search" type="text"
+                        placeholder="Search.">
+                </div>
+                <ul id="menu" class="menu">
+                    <li><a href="seller.html">Seller/Vendor</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+                <ul id="user-menu" class="menu">
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li>
+                        <button class="btn text-bg-danger"
+                            id="logoutBtn">LogOut</button>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <h1>Home page</h1>
     </body>
