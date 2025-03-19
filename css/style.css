@@ -61,11 +61,6 @@
     letter-spacing: 1px;
 }
 
-#user-menu{
-    display: none;
-}
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-item {

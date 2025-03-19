@@ -9,12 +9,12 @@ export async function CreateUser(event) {
   let password = document.getElementById("password").value.trim();
 
   try {
-    // check if user already exists
+    // Check if user already exists
     let response = await fetch(`${baseurl}/users.json`);
     let data = await response.json();
     let userObj = data ? Object.values(data) : [];
     let exists = userObj.some((e) => e.email == email);
-    if (exists) return showMessage("red", "user already exist");
+    if (exists) return showMessage("red", "User already exists");
 
     let user = { name, email, password, role: "customer" };
     let newUser = await fetch(`${baseurl}/users.json`, {
@@ -61,8 +61,8 @@ export async function LoginUser(event) {
   }
 }
 
-// // Logout user
-// export function LogoutUser() {
-//   localStorage.removeItem("user");
-//   window.location.href = "login.html";
-// }
+// Logout user
+export function LogoutUser() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}
