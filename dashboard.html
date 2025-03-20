@@ -12,219 +12,97 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <style>
-      /* Custom Styles */
-      body {
-        background-color: #f8f9fa;
-        font-family: Arial, sans-serif;
-      }
-
-      .main-content {
-        margin-left: 250px; /* Adjust based on sidebar width */
-        padding: 20px;
-      }
-
-      .card {
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-      }
-
-      .card-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .card-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: #007bff;
-      }
-
-      .progress-circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: conic-gradient(#007bff 75%, #e9ecef 0);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-      }
-
-      .progress-circle span {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .icon {
-        font-size: 30px;
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-
-      .section-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      .order-card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .order-card h5 {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .order-card p {
-        font-size: 16px;
-        color: #666;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .main-content {
-          margin-left: 0;
-        }
-
-        .card {
-          margin-bottom: 20px;
-        }
+      /* Main Content */
+      .main-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
       }
     </style>
     </head>
     <body>
+
         <!-- Navbar and Sidebar -->
         <div id="navbar"></div>
         <div id="sidebar"></div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <div class="container mt-5 pt-4">
-                <h1>Welcome to Seller Dashboard</h1>
-
-                <!-- Key Metrics Section -->
-                <div class="row mt-4">
-                    <div class="col-md-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="icon">
-                                    <i class="fas fa-box"></i>
-                                </div>
-                                <h5 class="card-title">Total Products</h5>
-                                <p class="card-text">50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <h5 class="card-title">Total Orders</h5>
-                                <p class="card-text">120</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </div>
-                                <h5 class="card-title">Low Stock</h5>
-                                <p class="card-text">5</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h5 class="card-title">Revenue</h5>
-                                <p class="card-text">$5,000</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Key Metrics Section -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-box"></i>
                 </div>
-
-                <!-- Order Status Section -->
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <h2 class="section-title">Order Status</h2>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="order-card text-center">
-                            <div class="progress-circle">
-                                <span>75%</span>
-                            </div>
-                            <h5>Pending Orders</h5>
-                            <p>15 Orders</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="order-card text-center">
-                            <div class="progress-circle">
-                                <span>50%</span>
-                            </div>
-                            <h5>Delivered Orders</h5>
-                            <p>60 Orders</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="order-card text-center">
-                            <div class="progress-circle">
-                                <span>25%</span>
-                            </div>
-                            <h5>Canceled Orders</h5>
-                            <p>10 Orders</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="order-card text-center">
-                            <div class="progress-circle">
-                                <span>90%</span>
-                            </div>
-                            <h5>Returned Orders</h5>
-                            <p>5 Orders</p>
-                        </div>
-                    </div>
+                <h5 class="card-title">Total Products</h5>
+                <p class="card-text">50</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-shopping-cart"></i>
                 </div>
+                <h5 class="card-title">Total Orders</h5>
+                <p class="card-text">120</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h5 class="card-title">Low Stock</h5>
+                <p class="card-text">5</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h5 class="card-title">Revenue</h5>
+                <p class="card-text">$5,000</p>
+            </div>
 
-                <!-- Recent Activity Section -->
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <h2 class="section-title">Recent Activity</h2>
-                        <div class="order-card">
-                            <h5>New Order Received</h5>
-                            <p>Order #12345 has been placed.</p>
-                        </div>
-                        <div class="order-card">
-                            <h5>Product Out of Stock</h5>
-                            <p>Product "XYZ" is now out of stock.</p>
-                        </div>
-                        <div class="order-card">
-                            <h5>Order Delivered</h5>
-                            <p>Order #12340 has been delivered.</p>
-                        </div>
-                    </div>
+            <!-- Order Status Section -->
+            <div class="card">
+                <h2 class="section-title">Order Status</h2>
+                <div class="progress-circle">
+                    <span>75%</span>
+                </div>
+                <h5>Pending Orders</h5>
+                <p>15 Orders</p>
+            </div>
+            <div class="card">
+                <div class="progress-circle">
+                    <span>50%</span>
+                </div>
+                <h5>Delivered Orders</h5>
+                <p>60 Orders</p>
+            </div>
+            <div class="card">
+                <div class="progress-circle">
+                    <span>25%</span>
+                </div>
+                <h5>Canceled Orders</h5>
+                <p>10 Orders</p>
+            </div>
+            <div class="card">
+                <div class="progress-circle">
+                    <span>90%</span>
+                </div>
+                <h5>Returned Orders</h5>
+                <p>5 Orders</p>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="card">
+                <h2 class="section-title">Recent Activity</h2>
+                <div class="order-card">
+                    <h5>New Order Received</h5>
+                    <p>Order #12345 has been placed.</p>
+                </div>
+                <div class="order-card">
+                    <h5>Product Out of Stock</h5>
+                    <p>Product "XYZ" is now out of stock.</p>
+                </div>
+                <div class="order-card">
+                    <h5>Order Delivered</h5>
+                    <p>Order #12340 has been delivered.</p>
                 </div>
             </div>
         </div>

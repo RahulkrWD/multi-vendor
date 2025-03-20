@@ -29,10 +29,10 @@ body {
   align-items: center;
 }
 
-.sidebar .nav-link.active {
+/* .sidebar .nav-link.active {
   background-color: #007bff;
   color: white;
-}
+} */
 
 .sidebar .nav-link:hover {
   background-color: #007bff;
@@ -179,6 +179,83 @@ body {
   color: #ffc107;
 }
 
+
+/* Dashboard home page */
+
+.card {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.icon {
+  font-size: 30px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#007bff 75%, #e9ecef 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.progress-circle span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-card h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-card p {
+  font-size: 16px;
+  color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
   .sidebar {
@@ -207,6 +284,12 @@ body {
 
   .product-form .form-grid {
     grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
   }
 }
 
