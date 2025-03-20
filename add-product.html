@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Product</title>
+        <link rel="stylesheet" href="./css/dashboard.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Navbar and Sidebar -->
+        <div id="navbar"></div>
+        <div id="sidebar"></div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container mt-3 pt-3">
+                <h1><i class="fas fa-plus"></i> Add Product</h1>
+                <form class="mt-4 product-form">
+                    <!-- Grid Layout for Form Fields -->
+                    <div class="form-grid">
+                        <!-- Product Name -->
+                        <div class="form-group">
+                            <label for="productName" class="form-label"><i
+                                    class="fas fa-tag"></i> Product Name</label>
+                            <input type="text" class="form-control"
+                                id="productName"
+                                placeholder="Enter product name" required>
+                        </div>
+
+                        <!-- Product Category -->
+                        <div class="form-group">
+                            <label for="productCategory" class="form-label"><i
+                                    class="fas fa-list"></i> Category</label>
+                            <select class="form-select" id="productCategory"
+                                required>
+                                <option value>Select category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="home">Home & Kitchen</option>
+                                <option value="beauty">Beauty</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </div>
+
+                        <!-- Product Brand -->
+                        <div class="form-group">
+                            <label for="productBrand" class="form-label"><i
+                                    class="fas fa-building"></i> Brand</label>
+                            <input type="text" class="form-control"
+                                id="productBrand"
+                                placeholder="Enter product brand" required>
+                        </div>
+
+                        <!-- Product Price -->
+                        <div class="form-group">
+                            <label for="productPrice" class="form-label"><i
+                                    class="fas fa-dollar-sign"></i>
+                                Price</label>
+                            <input type="number" class="form-control"
+                                id="productPrice"
+                                placeholder="Enter product price" required>
+                        </div>
+
+                        <!-- Product Stock -->
+                        <div class="form-group">
+                            <label for="productStock" class="form-label"><i
+                                    class="fas fa-box"></i> Stock</label>
+                            <input type="number" class="form-control"
+                                id="productStock"
+                                placeholder="Enter product stock" required>
+                        </div>
+
+                        <!-- Product Rating -->
+                        <div class="form-group">
+                            <label for="productRating" class="form-label"><i
+                                    class="fas fa-star"></i> Rating</label>
+                            <select class="form-select" id="productRating"
+                                required>
+                                <option value>Select rating</option>
+                                <option value="1">1 Star</option>
+                                <option value="2">2 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="5">5 Stars</option>
+                            </select>
+                        </div>
+
+                        <!-- Product Color -->
+                        <div class="form-group">
+                            <label for="productColor" class="form-label"><i
+                                    class="fas fa-palette"></i> Color</label>
+                            <input type="text" class="form-control"
+                                id="productColor"
+                                placeholder="Enter product color">
+                        </div>
+
+                        <!-- Product Size -->
+                        <div class="form-group">
+                            <label for="productSize" class="form-label"><i
+                                    class="fas fa-ruler"></i> Size</label>
+                            <input type="text" class="form-control"
+                                id="productSize"
+                                placeholder="Enter product size">
+                        </div>
+
+                        <!-- Product Weight -->
+                        <div class="form-group">
+                            <label for="productWeight" class="form-label"><i
+                                    class="fas fa-weight-hanging"></i>
+                                Weight</label>
+                            <input type="text" class="form-control"
+                                id="productWeight"
+                                placeholder="Enter product weight">
+                        </div>
+
+                        <!-- Product Dimensions -->
+                        <div class="form-group">
+                            <label for="productDimensions" class="form-label"><i
+                                    class="fas fa-ruler-combined"></i>
+                                Dimensions</label>
+                            <input type="text" class="form-control"
+                                id="productDimensions"
+                                placeholder="Enter product dimensions (L x W x H)">
+                        </div>
+
+                        <!-- Main Image -->
+                        <div class="form-group">
+                            <label for="mainImage" class="form-label"><i
+                                    class="fas fa-image"></i> Main Image</label>
+                            <input type="file" class="form-control"
+                                id="mainImage" accept="image/*" required>
+                        </div>
+
+                        <!-- Gallery Images -->
+                        <div class="form-group">
+                            <label for="galleryImages" class="form-label"><i
+                                    class="fas fa-images"></i> Gallery
+                                Images</label>
+                            <input type="file" class="form-control"
+                                id="galleryImages" accept="image/*" multiple>
+                        </div>
+
+                        <!-- Product Description -->
+                        <div class="form-group full-width">
+                            <label for="productDescription"
+                                class="form-label"><i
+                                    class="fas fa-align-left"></i>
+                                Description</label>
+                            <textarea class="form-control"
+                                id="productDescription" rows="5"
+                                placeholder="Enter product description"
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group full-width text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg"><i
+                                class="fas fa-save"></i> Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/dashboard.js"></script>
+    </body>
+</html>
