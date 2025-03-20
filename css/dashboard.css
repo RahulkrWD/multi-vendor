@@ -19,8 +19,8 @@ body {
   overflow-y: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: width 0.3s ease;
-  z-index: 999; 
-}
+  z-index: 999;
+} 
 
 .sidebar .nav-link {
   padding: 10px 20px;
@@ -29,10 +29,10 @@ body {
   align-items: center;
 }
 
-/* .sidebar .nav-link.active {
+.sidebar .nav-link.active {
   background-color: #007bff;
   color: white;
-} */
+}
 
 .sidebar .nav-link:hover {
   background-color: #007bff;
@@ -292,4 +292,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-

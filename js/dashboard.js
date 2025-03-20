@@ -64,7 +64,7 @@ document.getElementById("sidebar").innerHTML = `
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./orders.html">
+        <a class="nav-link" href="./seller-order.html">
           <i class="fas fa-shopping-cart"></i>
           <span class="sidebar-text">Orders</span>
         </a>
@@ -79,12 +79,27 @@ document.getElementById("sidebar").innerHTML = `
     </ul>
   </div>
 `;
+// Function to set the active link in the sidebar
+function setActiveLink() {
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".sidebar .nav-link");
+
+  navLinks.forEach((link) => {
+    const linkHref = link.getAttribute("href").split("/").pop();
+    if (linkHref === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
 
 // Toggle Sidebar on Mobile
 function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.toggle("active");
 }
+setActiveLink();
 
 // Seller logout
 function sellerLogout() {

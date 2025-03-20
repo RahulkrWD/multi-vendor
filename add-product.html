@@ -17,10 +17,10 @@
         <div id="sidebar"></div>
 
         <!-- Main Content -->
-        <div class="main-content">
-            <div class="container mt-3 pt-3">
+        <div class="main-content mb-5">
+            <div class="container mb-5 mt-3 pt-3">
                 <h1><i class="fas fa-plus"></i> Add Product</h1>
-                <form class="mt-4 product-form">
+                <form id="addProductFrom" class="mt-4 product-form">
                     <!-- Grid Layout for Form Fields -->
                     <div class="form-grid">
                         <!-- Product Name -->
@@ -99,15 +99,6 @@
                                 placeholder="Enter product color">
                         </div>
 
-                        <!-- Product Size -->
-                        <div class="form-group">
-                            <label for="productSize" class="form-label"><i
-                                    class="fas fa-ruler"></i> Size</label>
-                            <input type="text" class="form-control"
-                                id="productSize"
-                                placeholder="Enter product size">
-                        </div>
-
                         <!-- Product Weight -->
                         <div class="form-group">
                             <label for="productWeight" class="form-label"><i
@@ -118,33 +109,14 @@
                                 placeholder="Enter product weight">
                         </div>
 
-                        <!-- Product Dimensions -->
-                        <div class="form-group">
-                            <label for="productDimensions" class="form-label"><i
-                                    class="fas fa-ruler-combined"></i>
-                                Dimensions</label>
-                            <input type="text" class="form-control"
-                                id="productDimensions"
-                                placeholder="Enter product dimensions (L x W x H)">
-                        </div>
-
                         <!-- Main Image -->
                         <div class="form-group">
                             <label for="mainImage" class="form-label"><i
                                     class="fas fa-image"></i> Main Image</label>
-                            <input type="file" class="form-control"
-                                id="mainImage" accept="image/*" required>
+                            <input type="text" class="form-control"
+                                id="mainImage" placeholder="Main Image URL"
+                                required>
                         </div>
-
-                        <!-- Gallery Images -->
-                        <div class="form-group">
-                            <label for="galleryImages" class="form-label"><i
-                                    class="fas fa-images"></i> Gallery
-                                Images</label>
-                            <input type="file" class="form-control"
-                                id="galleryImages" accept="image/*" multiple>
-                        </div>
-
                         <!-- Product Description -->
                         <div class="form-group full-width">
                             <label for="productDescription"
@@ -163,12 +135,14 @@
                         <button type="submit" class="btn btn-primary btn-lg"><i
                                 class="fas fa-save"></i> Add Product</button>
                     </div>
+
+                    <p class="text-center" id="message"></p>
                 </form>
             </div>
         </div>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./js/dashboard.js"></script>
+        <script type="module" src="./js/seller.js"></script>
     </body>
 </html>

@@ -7,7 +7,6 @@ import {
 } from "./auth.js";
 document.addEventListener("DOMContentLoaded", () => {
   checkUserLogin();
-
   // user Register Form
   document
     .getElementById("registerForm")

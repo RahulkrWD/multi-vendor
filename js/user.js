@@ -1,48 +1,138 @@
-import { baseurl } from "./firebase.js";
 import { LogoutUser } from "./auth.js";
 
 // Check if user is logged in and dynamically create the navbar
 export async function checkUserLogin() {
-  let response = await fetch(`${baseurl}/users.json`);
-  let data = await response.json();
-  let users = data
-    ? Object.entries(data).map(([id, user]) => ({ id, ...user }))
-    : [];
   let loggedInUser = localStorage.getItem("user");
-
-  let user = users.find((u) => u.id === loggedInUser);
   let nav = document.getElementById("navbar");
 
-  if (user?.role == "customer") {
+  if (loggedInUser) {
     nav.innerHTML = `
-      <div class="navbar-item">
-        <h3><a class="title" href="index.html">Shoppy</a></h3>
-        <div class="search-container">
-          <input class="search" id="search" type="text" placeholder="Search.">
+       <nav class="navbar-custom">
+            <!-- Brand/Logo -->
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="brand-text">Shoppy</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    class="search"
+                    id="search"
+                    type="text"
+                    placeholder="Search..." />
+            </div>
+
+            <!-- Nav Links (Visible on Desktop) -->
+            <div class="nav-links">
+                <a class="nav-link" href="./profile.html">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a class="nav-link" href="./cart.html">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                </a>
+                 <a class="nav-link"  id="logoutBtn">
+                 <i class="fas fa-sign-out-alt"></i>  LogOut
+                 </a>
+            </div>
+
+            <!-- Sidebar Toggle Button (Visible on Mobile/Tablet) -->
+            <button class="sidebar-toggle" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Sidebar (Visible on Mobile/Tablet) -->
+        <div class="sidebar" id="sidebar">
+            <a class="nav-link" href="profile.html">
+                <i class="fas fa-user"></i> Profile
+            </a>
+            <a class="nav-link" href="cart.html">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+             <a class="nav-link"  id="logoutBtnside">
+             <i class="fas fa-sign-out-alt"></i>  LogOut
+             </a>
         </div>
-        <ul id="user-menu" class="menu">
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li>
-            <button class="btn text-bg-danger" id="logoutBtn">LogOut</button>
-          </li>
-        </ul>
-      </div>
+
     `;
+
     document.getElementById("logoutBtn").addEventListener("click", LogoutUser);
+    document
+      .getElementById("logoutBtnside")
+      .addEventListener("click", LogoutUser);
   } else {
     nav.innerHTML = `
-      <div class="navbar-item">
-        <h3><a class="title" href="index.html">Shoppy</a></h3>
-        <div class="search-container">
-          <input class="search" id="search" type="text" placeholder="Search.">
+
+     <nav class="navbar-custom">
+            <!-- Brand/Logo -->
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="brand-text">Shoppy</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    class="search"
+                    id="search"
+                    type="text"
+                    placeholder="Search..." />
+            </div>
+
+            <!-- Nav Links (Visible on Desktop) -->
+            <div class="nav-links">
+                <a class="nav-link" href="seller.html">
+                    <i class="fas fa-user"></i>Seller/Vendor
+                </a>
+                <a class="nav-link" href="register.html">
+                    <i class="fas fa-shopping-cart"></i> Register
+                </a>
+                <a class="nav-link" href="login.html">
+                    <i class="fas fa-sign-out-alt"></i> Login
+                </a>
+            </div>
+
+            <!-- Sidebar Toggle Button (Visible on Mobile/Tablet) -->
+            <button class="sidebar-toggle" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Sidebar (Visible on Mobile/Tablet) -->
+        <div class="sidebar" id="sidebar">
+            <a class="nav-link" href="seller.html">
+                <i class="fas fa-user"></i> Seller/Vendor
+            </a>
+            <a class="nav-link" href="register.html">
+                <i class="fas fa-shopping-cart"></i> Register
+            </a>
+            <a class="nav-link" href="login.html">
+                <i class="fas fa-sign-out-alt"></i> Login
+            </a>
         </div>
-        <ul id="menu" class="menu">
-          <li><a href="seller.html">Seller/Vendor</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </div>
+
     `;
   }
+  document.getElementById("toggleSidebar").addEventListener("click", () => {
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+    sidebar.classList.toggle("open");
+    mainContent?.classList?.toggle("shifted");
+  });
 }
+
+// Close Sidebar on Resize (if screen width > 768px)
+function handleResize() {
+  const sidebar = document.getElementById("sidebar");
+  const mainContent = document.getElementById("mainContent");
+  if (window.innerWidth > 768 && sidebar.classList.contains("open")) {
+    sidebar.classList.remove("open");
+    mainContent.classList.remove("shifted");
+  }
+}
+
+// Add Resize Event Listener
+window.addEventListener("resize", handleResize);
