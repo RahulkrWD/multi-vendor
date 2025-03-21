@@ -34,6 +34,7 @@ a, button{
     text-decoration: none;
     display: flex;
     align-items: center;
+    font-style: italic;
   }
 
   .navbar-custom .navbar-brand .brand-text {
@@ -51,7 +52,7 @@ a, button{
   }
 
   .navbar-custom .search-container input {
-    width: 100%;
+    width: 75%;
     padding: 8px 8px 8px 40px; /* Space for icon */
     border: none;
     border-radius: 5px;
@@ -109,14 +110,15 @@ a, button{
 
   .sidebar .nav-link {
     color: #ffffff; /* White text */
-    padding: 15px 0;
+    padding: 15px;
     text-decoration: none;
     display: block;
     font-size: 16px;
   }
 
   .sidebar .nav-link:hover {
-    background-color: #1abc9c; /* Teal on hover */
+    background-color: #93d0c4;
+    border-radius: 7px; /* Teal on hover */
   }
 
   .sidebar .nav-link i {
@@ -132,6 +134,10 @@ a, button{
     .navbar-custom .sidebar-toggle {
       display: block; /* Show toggle button on mobile/tablet */
     }
+    navbar-custom .search-container input {
+      width: 100%
+    }
+  
 
   }
 
@@ -144,7 +150,7 @@ a, button{
 /* Footer Styles */
 .footer-content {
   background-color: #343a40; /* Dark background */
-  color: #ffffff; /* White text */
+  color: #ffffff; 
   padding: 20px 0;
 }
 
@@ -160,13 +166,13 @@ a, button{
 }
 
 .footer-links a {
-  color: #ffffff; /* White text for links */
+  color: #ffffff; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #007bff; /* Blue color on hover */
+  color: #007bff;
 }
 
 /* Responsive Adjustments */
@@ -175,4 +181,50 @@ a, button{
       display: block;
       margin: 10px 0;
   }
+}
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Circle images styling */
+.circle-image {
+  width: 120px; 
+  height: 120px; 
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd; 
+  transition: transform 0.3s ease;
+}
+.circle-image:hover {
+  transform: scale(1.1);
+}
+
+/* Scrollable circle images */
+.scrollable-circles {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px; 
+  padding: 20px 0;
+  justify-content: center;
+}
+.scrollable-circles::-webkit-scrollbar {
+  display: none;
+}
+
+/* Full-width image section */
+.full-width-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Product title styling */
+.product-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
 }

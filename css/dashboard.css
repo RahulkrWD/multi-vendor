@@ -3,9 +3,6 @@ body {
   background-color: #f8f9fa;
   padding-top: 56px; 
 }
-
-
-
 /* Navbar */
 .navbar {
   z-index: 1000; 
@@ -25,7 +22,7 @@ body {
 } 
 
 .sidebar .nav-link {
-  padding: 10px 20px;
+  padding: 25px 20px;
   color: #333;
   display: flex;
   align-items: center;
@@ -56,7 +53,7 @@ body {
   display: none;
   position: fixed;
   top: 60px;
-  left: 10px;
+  left: 7px;
   z-index: 1001; 
 }
 
@@ -158,6 +155,8 @@ body {
   padding: 0.75rem;
   vertical-align: middle;
   border: 1px solid #dee2e6;
+  font-size: 13px;
+  text-align: center;
 }
 
 
@@ -258,11 +257,33 @@ body {
   color: #666;
 }
 
+#product-name-list{
+  text-align: start;
+  width: 250px
+}
+
+#price, #stock{
+  width: 100px;
+}
+
+#product-rating{
+  font-size: 10px;
+  width: 100px;
+}
+#product-image-list{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
 /* Responsive Design */
 @media (max-width: 992px) {
   .sidebar {
     width: 60px; 
+    top: 100px; 
+
   }
+
 
   .sidebar .sidebar-text {
     display: none; 
@@ -286,6 +307,10 @@ body {
 
   .product-form .form-grid {
     grid-template-columns: 1fr; 
+  }
+  #product-name-list{
+    text-align: start;
+    width: 200px
   }
 }
 

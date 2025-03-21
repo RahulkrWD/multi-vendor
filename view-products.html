@@ -1,166 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View Products</title>
-        <link rel="stylesheet" href="./css/dashboard.css">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
-    <body>
-        <!-- Navbar and Sidebar -->
-        <div id="navbar"></div>
-        <div id="sidebar"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Navbar and Sidebar -->
+    <div id="navbar"></div>
+    <div id="sidebar"></div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="container mt-3 pt-3">
-                <h1><i class="fas fa-eye"></i> View Products</h1>
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container mt-3 pt-3">
+        <h1><i class="fas fa-eye"></i> View Products</h1>
 
-                <!-- Filters -->
-                <div class="filters mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-3">
-                            <label for="categoryFilter" class="form-label"><i
-                                    class="fas fa-filter"></i> Category</label>
-                            <select class="form-select" id="categoryFilter">
-                                <option value>All Categories</option>
-                                <option value="electronics">Electronics</option>
-                                <option value="clothing">Clothing</option>
-                                <option value="home">Home & Kitchen</option>
-                                <option value="beauty">Beauty</option>
-                                <option value="sports">Sports</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="priceSort" class="form-label"><i
-                                    class="fas fa-sort"></i> Sort by
-                                Price</label>
-                            <select class="form-select" id="priceSort">
-                                <option value>Default</option>
-                                <option value="low-to-high">Low to High</option>
-                                <option value="high-to-low">High to Low</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-end">
-                            <button class="btn btn-primary me-2"><i
-                                    class="fas fa-filter"></i> Apply
-                                Filters</button>
-                            <button class="btn btn-secondary"><i
-                                    class="fas fa-sync"></i> Reset</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Total Products Count -->
-                <div class="total-products mb-4">
-                    <h5><i class="fas fa-box"></i> Total Products: <span
-                            class="badge bg-primary">15</span></h5>
-                </div>
-
-                <!-- Product Table -->
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>#</th>
-                                <th>Product Name</th>
-                                <th>Category</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Rating</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Product A</td>
-                                <td>Electronics</td>
-                                <td>$100</td>
-                                <td>50</td>
-                                <td>
-                                    <span class="text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                </td>
-                                <td>
-                                    <button
-                                        class="btn btn-sm btn-warning me-2"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button class="btn btn-sm btn-danger"><i
-                                            class="fas fa-trash"></i>
-                                        Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Product B</td>
-                                <td>Clothing</td>
-                                <td>$50</td>
-                                <td>30</td>
-                                <td>
-                                    <span class="text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                </td>
-                                <td>
-                                    <button
-                                        class="btn btn-sm btn-warning me-2"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button class="btn btn-sm btn-danger"><i
-                                            class="fas fa-trash"></i>
-                                        Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Product C</td>
-                                <td>Home & Kitchen</td>
-                                <td>$80</td>
-                                <td>20</td>
-                                <td>
-                                    <span class="text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </span>
-                                </td>
-                                <td>
-                                    <button
-                                        class="btn btn-sm btn-warning me-2"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button class="btn btn-sm btn-danger"><i
-                                            class="fas fa-trash"></i>
-                                        Delete</button>
-                                </td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                    </table>
-                </div>
+        <!-- Filters -->
+        <div class="filters mb-4">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label for="categoryFilter" class="form-label"><i
+                  class="fas fa-filter"></i> Category</label>
+              <select class="form-select" id="categoryFilter">
+                <option value>All Categories</option>
+                <option value="Footwears">Footwears</option>
+                <option value="Bracelet">Bracelet</option>
+                <option value="Bags">Bags</option>
+                <option value="Highlighter">Highlighter</option>
+                <option value="Wallets">Wallets</option>
+                <option value="Shampoo">Shampoo</option>
+                <option value="Others">Others</option>
+              </select>
             </div>
+            <div class="col-md-3">
+              <label for="priceSort" class="form-label"><i
+                  class="fas fa-sort"></i> Sort by Price</label>
+              <select class="form-select" id="priceSort">
+                <option value>Default</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+              </select>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+              <button class="btn btn-primary me-2" id="applyFilters"><i
+                  class="fas fa-filter"></i> Apply Filters</button>
+              <button class="btn btn-secondary" id="resetFilters"><i
+                  class="fas fa-sync"></i> Reset</button>
+            </div>
+          </div>
         </div>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="./js/dashboard.js"></script>
-        <script type="module" src="./js/seller.js"></script>
-    </body>
+
+        <!-- Total Products Count -->
+        <div class="total-products mb-4">
+          <h5><i class="fas fa-box"></i> Total Products: <span
+              id="countPoduct"
+              class="badge bg-primary">0</span></h5>
+        </div>
+
+        <!-- Product Table -->
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Rating</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="product-list"></tbody>
+          </table>
+          <h2 class="text-center pt-3" id="empty-product"></h2>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <script type="module" src="./js/seller.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  ViewProducts();
+});
+
+let url =
+  "https://multi-vendor-e-commerce-37b58-default-rtdb.asia-southeast1.firebasedatabase.app";
+
+// Store all products globally
+let products = [];
+let filteredProducts = [];
+let currentPage = 1;
+const productsPerPage = 10;
+
+// Fetch and display products
+async function ViewProducts() {
+  let sellerId = localStorage.getItem("vendor");
+  let emptyProduct = document.getElementById("empty-product");
+  let productList = document.getElementById("product-list");
+
+  try {
+    // Fetch products from the API
+    let response = await fetch(`${url}/products.json`);
+    let data = await response.json();
+    let allProducts = data
+      ? Object.entries(data).map(([id, data]) => ({ id, ...data }))
+      : [];
+
+    // Filter products by seller ID
+    products = allProducts.filter((prod) => prod.sellerID === sellerId);
+    filteredProducts = [...products]; // Initialize filtered products
+
+    // Update the product count
+    document.getElementById("countPoduct").textContent = products.length;
+
+    // Render products and pagination
+    renderProducts();
+    renderPagination();
+  } catch (error) {
+    console.log("Something went wrong while fetching products.");
+  }
+}
+
+// Render products based on current page and filters
+function renderProducts() {
+  let emptyProduct = document.getElementById("empty-product");
+  let productList = document.getElementById("product-list");
+
+  // Clear existing content
+  productList.innerHTML = "";
+
+  // Check if there are no products
+  if (filteredProducts.length === 0) {
+    emptyProduct.textContent = "No products found. Please add a product.";
+    return;
+  }
+
+  // Hide the empty product message
+  emptyProduct.textContent = "";
+
+  // Calculate products to display for the current page
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
+
+  // Dynamically generate product rows
+  productsToDisplay.forEach((product, index) => {
+    let tr = document.createElement("tr");
+
+    // Populate table row with product data
+    tr.innerHTML = `
+        <td id="product-name-list">${product.name}</td>
+        <td>${product.category}</td>
+        <td><input id="price" type="number" class="form-control price-input" value="${
+          product.price
+        }" data-id="${product.id}"></td>
+        <td><input id="stock" type="number" class="form-control stock-input" value="${
+          product.stock || 0
+        }" data-id="${product.id}"></td>
+        <td id="product-rating">
+          <span class="text-warning">
+            ${generateStarRating(product.rating)}
+          </span>
+        </td>
+        <td>
+          <img id="product-image-list" src="${product.image}" alt="${product.name}">
+          <button class="btn btn-sm btn-warning me-2" onclick="editProduct('${
+            product.id
+          }')">
+            <i class="fas fa-edit"></i> Edit
+          </button>
+          <button class="btn btn-sm btn-danger" onclick="deleteProduct('${
+            product.id
+          }')">
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </td>
+      `;
+
+    // Append the row to the table
+    productList.appendChild(tr);
+  });
+}
+
+// Render pagination buttons
+function renderPagination() {
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement("li");
+    li.className = `page-item ${i === currentPage ? "active" : ""}`;
+    li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+    li.addEventListener("click", () => {
+      currentPage = i;
+      renderProducts();
+      renderPagination();
+    });
+    pagination.appendChild(li);
+  }
+}
+
+// Apply filters
+document.getElementById("applyFilters").addEventListener("click", () => {
+  const categoryFilter = document.getElementById("categoryFilter").value;
+  const priceSort = document.getElementById("priceSort").value;
+
+  // Filter by category
+  filteredProducts = products.filter((product) =>
+    categoryFilter ? product.category === categoryFilter : true
+  );
+
+  // Sort by price
+  if (priceSort === "low-to-high") {
+    filteredProducts.sort((a, b) => a.cost - b.cost);
+  } else if (priceSort === "high-to-low") {
+    filteredProducts.sort((a, b) => b.cost - a.cost);
+  }
+
+  // Reset to the first page
+  currentPage = 1;
+  renderProducts();
+  renderPagination();
+});
+
+// Reset filters
+document.getElementById("resetFilters").addEventListener("click", () => {
+  document.getElementById("categoryFilter").value = "";
+  document.getElementById("priceSort").value = "";
+  filteredProducts = [...products];
+  currentPage = 1;
+  renderProducts();
+  renderPagination();
+});
+
+// Delete product
+async function deleteProduct(index) {
+  try {
+    await fetch(`${url}/products/${index}.json`, {
+      method: "DELETE",
+    });
+    ViewProducts(); // Refresh the product list after deletion
+  } catch (error) {
+    console.log("Something went wrong");
+  }
+}
+
+// Edit product price or stock
+async function editProduct(index) {
+  const price = document.querySelector(
+    `.price-input[data-id="${index}"]`
+  ).value;
+  const stock = document.querySelector(
+    `.stock-input[data-id="${index}"]`
+  ).value;
+  const edit = { price: parseFloat(price), stock: parseInt(stock) };
+
+  try {
+    let response = await fetch(`${url}/products/${index}.json`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(edit),
+    });
+    if (response.ok) {
+      alert("Updated Successfully");
+    }
+    ViewProducts();
+  } catch (error) {
+    console.log("Something went wrong");
+  }
+}
+
+// Helper function to generate star rating
+function generateStarRating(rating) {
+  let stars = "";
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars += `<i class="fas fa-star"></i>`;
+    } else {
+      stars += `<i class="far fa-star"></i>`;
+    }
+  }
+  return stars;
+}
+    </script>
+  </body>
 </html>

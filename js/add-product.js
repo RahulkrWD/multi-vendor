@@ -8,8 +8,7 @@ export async function addProduct(event) {
   let price = document.getElementById("productPrice").value.trim();
   let stock = document.getElementById("productStock").value.trim();
   let rating = document.getElementById("productRating").value;
-  let color = document.getElementById("productColor").value.trim();
-  let weigth = document.getElementById("productWeight").value.trim();
+  let details = document.getElementById("productDetails").value.trim();
   let image = document.getElementById("mainImage").value.trim();
   let desciption = document.getElementById("productDescription").value.trim();
   let sellerID = localStorage.getItem("vendor");
@@ -20,8 +19,7 @@ export async function addProduct(event) {
     price,
     stock,
     rating,
-    color,
-    weigth,
+    details,
     image,
     desciption,
     sellerID,
@@ -44,8 +42,7 @@ export async function addProduct(event) {
       document.getElementById("productPrice").value = "";
       document.getElementById("productStock").value = "";
       document.getElementById("productRating").value = "";
-      document.getElementById("productColor").value = "";
-      document.getElementById("productWeight").value = "";
+      document.getElementById("productDetails").value = "";
       document.getElementById("mainImage").value = "";
       document.getElementById("productDescription").value = "";
     } else {
@@ -63,6 +60,7 @@ export async function isSellerLoggedIn() {
     return;
   }
 }
+// Seller profile
 export async function SellerProfileForm(event) {
   event.preventDefault();
 
