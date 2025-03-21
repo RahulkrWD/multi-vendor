@@ -1,10 +1,11 @@
-import { addProduct, isSellerLoggedIn } from "./add-product.js";
-import { SellerProfileForm, GetSellerProfile } from "./auth.js";
+import {
+  addProduct,
+  isSellerLoggedIn,
+  SellerProfileForm,
+  GetSellerProfile,
+} from "./add-product.js";
 document.addEventListener("DOMContentLoaded", () => {
-  let sellerId = localStorage.getItem("vendor");
-  if (sellerId) {
-    GetSellerProfile();
-  }
+  GetSellerProfile();
   document
     .getElementById("addProductFrom")
     ?.addEventListener("submit", addProduct);
