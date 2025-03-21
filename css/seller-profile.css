@@ -1,0 +1,91 @@
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .form-control {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
+}
+
+.dark-mode .form-control:read-only {
+    background-color: #3d3d3d;
+    color: #ccc;
+}
+
+.dark-mode .btn-outline-secondary {
+    border-color: #666;
+    color: #ffffff;
+}
+
+.dark-mode .footer-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .footer-links a {
+    color: #bb86fc;
+}
+
+.dark-mode .footer-links a:hover {
+    color: #3700b3;
+}
+
+/* Profile Header Section */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    margin-top: 1rem;
+}
+
+.profile-info h2 {
+    margin-bottom: 0.5rem;
+}
+
+.profile-info p {
+    color: #6c757d;
+}
+
+/* Profile Form Section */
+.profile-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-form h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+}

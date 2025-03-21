@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seller Profile</title>
+        <link rel="stylesheet" href="./css/seller-profile.css">
+        <link rel="stylesheet" href="./css/dashboard.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="navbar"></div>
+        <div id="sidebar"></div>
+
+        <!-- Profile Photo and Info Section -->
+        <div class="main-content">
+            <div class="container mt-3 pt-3">
+                <div class="profile-header text-center">
+                    <div class="profile-photo">
+                        <img src="./images/seller.jpg"
+                            alt="Profile Photo"
+                            class="img-fluid rounded-circle">
+                        <button class="btn btn-secondary btn-sm mt-3"><i
+                                class="fas fa-camera me-2"></i>Change
+                            Photo</button>
+                    </div>
+                    <div class="profile-info mt-3">
+                        <h2 class="h4">Rahul Kumar</h2>
+                        <p class="text-muted">rahulkmrgaya21@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Edit Form Section -->
+                <div class="profile-form mt-5">
+                    <h2 class="h4 mb-4">Edit Profile</h2>
+                    <form>
+                        <!-- Row 1: Name and Email -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label"><i
+                                        class="fas fa-user me-2"></i>Full
+                                    Name</label>
+                                <input type="text" class="form-control"
+                                    id="name"
+                                    value="Rahul Kumar">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label"><i
+                                        class="fas fa-envelope me-2"></i>Email</label>
+                                <input type="email" class="form-control"
+                                    id="email"
+                                    value="rahulkmrgaya21@gmail.com" readonly>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Business Name and Business Type -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="businessName" class="form-label"><i
+                                        class="fas fa-building me-2"></i>Business
+                                    Name</label>
+                                <input type="text" class="form-control"
+                                    id="businessName" value="N/A">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="businessType" class="form-label"><i
+                                        class="fas fa-industry me-2"></i>Business
+                                    Type</label>
+                                <select class="form-select" id="businessType">
+                                    <option value="manufacturer"
+                                        selected>Manufacturer</option>
+                                    <option value="retailer">Retailer</option>
+                                    <option
+                                        value="wholesaler">Wholesaler</option>
+                                    <option
+                                        value="distributor">Distributor</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Address -->
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="address" class="form-label"><i
+                                        class="fas fa-map-marker-alt me-2"></i>Address</label>
+                                <textarea class="form-control" id="address"
+                                    rows="3">Manpur Patwatoli Manpur gaya bihar, near durga sthan UCO bank</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary"><i
+                                    class="fas fa-save me-2"></i>Save
+                                Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap JS and Custom JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/dashboard.js"></script>
+        <script type="module" src="./js/seller.js"></script>
+    </body>
+</html>

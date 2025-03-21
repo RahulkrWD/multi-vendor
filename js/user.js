@@ -85,13 +85,13 @@ export async function checkUserLogin() {
             <!-- Nav Links (Visible on Desktop) -->
             <div class="nav-links">
                 <a class="nav-link" href="seller.html">
-                    <i class="fas fa-user"></i>Seller/Vendor
+                    <i class="fas fa-user p-2"></i> Seller/Vendor
                 </a>
                 <a class="nav-link" href="register.html">
-                    <i class="fas fa-shopping-cart"></i> Register
+                    <i class="fas fa-shopping-cart p-2"></i> Register
                 </a>
                 <a class="nav-link" href="login.html">
-                    <i class="fas fa-sign-out-alt"></i> Login
+                    <i class="fas fa-sign-out-alt p-2"></i> Login
                 </a>
             </div>
 

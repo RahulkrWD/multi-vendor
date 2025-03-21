@@ -23,11 +23,11 @@ document.getElementById("navbar").innerHTML = `
             <i class="fas fa-user-circle fs-4"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="./seller-profile.html">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li>
-            <button onclick="sellerLogout()" class="dropdown-item">Logout</button>
-            </li>
+
+            <button id="sellerLogout" class="dropdown-item">Logout</button>
+            
           </ul>
         </div>
       </div>
@@ -47,32 +47,39 @@ document.getElementById("sidebar").innerHTML = `
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" href="./dashboard.html">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-home fs-4"></i>
           <span class="sidebar-text">Home</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./add-product.html">
-          <i class="fas fa-plus"></i>
+          <i class="fas fa-plus fs-4"></i>
           <span class="sidebar-text">Add Product</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./view-products.html">
-          <i class="fas fa-eye"></i>
+          <i class="fas fa-eye fs-4"></i>
           <span class="sidebar-text">View Products</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./seller-order.html">
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart fs-4"></i>
           <span class="sidebar-text">Orders</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./stock.html">
-          <i class="fas fa-box"></i>
+          <i class="fas fa-box fs-4"></i>
           <span class="sidebar-text">Stock</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="./seller-profile.html">
+          <i class="fas fa-user-circle fs-4"></i>
+          <span class="sidebar-text">Profile</span>
         </a>
       </li>
      
@@ -102,7 +109,7 @@ function toggleSidebar() {
 setActiveLink();
 
 // Seller logout
-function sellerLogout() {
+document.getElementById("sellerLogout").addEventListener("click", () => {
   localStorage.removeItem("vendor");
   window.location.href = "index.html";
-}
+});
