@@ -17,6 +17,10 @@
     padding: 50px 20px;
     background-color: #f8f9fa;
   }
+
+  a, button{
+    cursor: pointer;
+  }
   
   .login-container {
     display: flex;

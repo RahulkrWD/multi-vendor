@@ -4,9 +4,15 @@ import {
   LoginUser,
   createSellerForm,
   sellerLoginForm,
+  editProfileForm,
+  getProfile,
 } from "./auth.js";
 document.addEventListener("DOMContentLoaded", () => {
   checkUserLogin();
+  let userId = localStorage.getItem("user");
+  if (userId) {
+    getProfile();
+  }
   // user Register Form
   document
     .getElementById("registerForm")
@@ -24,4 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("sellerLoginForm")
     ?.addEventListener("submit", sellerLoginForm);
+
+  // Edit profile
+  document
+    .getElementById("editProfile")
+    ?.addEventListener("submit", editProfileForm);
 });

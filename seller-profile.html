@@ -25,20 +25,20 @@
                         <img src="./images/seller.jpg"
                             alt="Profile Photo"
                             class="img-fluid rounded-circle">
-                        <button class="btn btn-secondary btn-sm mt-3"><i
+                    </div>
+                    <div class="profile-info mt-1">
+                        <h2 id="sellerName" class="h4"></h2>
+                        <p id="sellerEmail" class="text-muted"></p>
+                        <button class="btn btn-secondary btn-sm mt-2"><i
                                 class="fas fa-camera me-2"></i>Change
                             Photo</button>
-                    </div>
-                    <div class="profile-info mt-3">
-                        <h2 class="h4">Rahul Kumar</h2>
-                        <p class="text-muted">rahulkmrgaya21@gmail.com</p>
                     </div>
                 </div>
 
                 <!-- Edit Form Section -->
                 <div class="profile-form mt-5">
                     <h2 class="h4 mb-4">Edit Profile</h2>
-                    <form>
+                    <form id="editSellerForm">
                         <!-- Row 1: Name and Email -->
                         <div class="row mb-3">
                             <div class="col-md-6">
@@ -46,34 +46,50 @@
                                         class="fas fa-user me-2"></i>Full
                                     Name</label>
                                 <input type="text" class="form-control"
-                                    id="name"
-                                    value="Rahul Kumar">
+                                    id="name">
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label"><i
                                         class="fas fa-envelope me-2"></i>Email</label>
                                 <input type="email" class="form-control"
                                     id="email"
-                                    value="rahulkmrgaya21@gmail.com" readonly>
+                                    disabled>
                             </div>
                         </div>
+                        <!-- Row 2: phone and  -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label"><i
+                                        class="fas fa-phone me-2"></i>Phone
+                                    Number</label>
+                                <input type="tel" class="form-control"
+                                    id="phone">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password" class="form-label"><i
+                                        class="fas fa-lock me-2"></i>Password</label>
+                                <input type="password" class="form-control"
+                                    id="password">
+                            </div>
 
-                        <!-- Row 2: Business Name and Business Type -->
+                        </div>
+
+                        <!-- Row 3: Business Name and Business Type -->
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="businessName" class="form-label"><i
                                         class="fas fa-building me-2"></i>Business
                                     Name</label>
                                 <input type="text" class="form-control"
-                                    id="businessName" value="N/A">
+                                    id="businessName">
                             </div>
                             <div class="col-md-6">
                                 <label for="businessType" class="form-label"><i
                                         class="fas fa-industry me-2"></i>Business
                                     Type</label>
                                 <select class="form-select" id="businessType">
-                                    <option value="manufacturer"
-                                        selected>Manufacturer</option>
+                                    <option
+                                        value="manufacturer">Manufacturer</option>
                                     <option value="retailer">Retailer</option>
                                     <option
                                         value="wholesaler">Wholesaler</option>
@@ -83,13 +99,13 @@
                             </div>
                         </div>
 
-                        <!-- Row 3: Address -->
+                        <!-- Row 4: Address -->
                         <div class="row mb-3">
                             <div class="col-12">
                                 <label for="address" class="form-label"><i
                                         class="fas fa-map-marker-alt me-2"></i>Address</label>
                                 <textarea class="form-control" id="address"
-                                    rows="3">Manpur Patwatoli Manpur gaya bihar, near durga sthan UCO bank</textarea>
+                                    rows="3"></textarea>
                             </div>
                         </div>
 
@@ -99,6 +115,8 @@
                                     class="fas fa-save me-2"></i>Save
                                 Changes</button>
                         </div>
+
+                        <p class="text-center" id="message"></p>
                     </form>
                 </div>
             </div>
