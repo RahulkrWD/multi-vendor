@@ -116,6 +116,7 @@ export async function checkUserLogin() {
 
     `;
   }
+
   document.getElementById("toggleSidebar").addEventListener("click", () => {
     const sidebar = document.getElementById("sidebar");
     const mainContent = document.getElementById("mainContent");

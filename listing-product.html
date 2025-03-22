@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-commerce Products</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/listing-poduct.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <style>
+    </style>
+    </head>
+    <body>
+        <header>
+            <nav id="navbar"></nav>
+            <div class="feature-product-container">
+                <ul type="none" id="feature-product"></ul>
+            </div>
+        </header>
+        <main class="bg-danger-subtle pt-3 pb-3 w-100"
+            style="min-height: 100vh;">
+            <div id="listing-product" class="listing-product"></div>
+        </main>
+        <!-- Footer Section -->
+        <footer class="footer-content bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Copyright Section -->
+                    <div
+                        class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p class="mb-0">&copy; 2023 Shoppy. All rights
+                            reserved.</p>
+                    </div>
+                    <!-- Footer Links Section -->
+                    <div class="col-md-6">
+                        <ul
+                            class="footer-links list-inline text-center text-md-end mb-0">
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-shield-alt me-2"></i>Privacy
+                                    Policy</a></li>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-file-contract me-2"></i>Terms
+                                    of Service</a></li>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-envelope me-2"></i>Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+        let url = "https://multi-vendor-e-commerce-37b58-default-rtdb.asia-southeast1.firebasedatabase.app/";
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchProduct();
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        async function fetchProduct() {
+            try {
+                let response = await fetch(`${url}/products.json`);
+                let data = await response.json();
+                let productArray = data ? Object.entries(data).map(([id, data]) => ({ id, ...data })) : [];
+                FilterByCategory(productArray);
+            } catch (error) {
+                console.log("Something went wrong while fetching products");
+            }
+        }
+
+        function FilterByCategory(products) {
+            let filteredProduct = [...products];
+            filteredProduct = filteredProduct.filter((product) => {
+                return product.category === category;
+            });
+            displayProducts(filteredProduct);
+        }
+
+        function displayProducts(products) {
+            let listingProduct = document.getElementById("listing-product");
+            listingProduct.innerHTML = ''; // Clear previous content
+
+            products.forEach((product) => {
+                // Create product card
+                let div = document.createElement("div");
+                div.className = "product-item";
+                div.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h5>${product.name}</h5>
+                    <h6>${product.brand}</h6>
+                    <p class="d-inline m-2"><i class="fas fa-tag text-success"></i> Price: ${product.price}</p>
+                    <p class="d-inline m-3"><i class="fas fa-star text-warning"></i> Rating: ${product.rating}</p>
+                `;
+
+                // Create modal for the product
+                let modal = document.createElement("div");
+                modal.className = "modal fade";
+                modal.id = `modal-${product.id}`;
+                modal.innerHTML = `
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title">${product.name}</h6>
+                            </div>
+                            <div class="modal-body">
+                                <img src="${product.image}" alt="${product.name}" class="modal-image">
+                                <p><i class="fas fa-tag text-success"></i> Price: ${product.price}</p>
+                                <p><i class="fas fa-star text-warning"></i> Rating: ${product.rating}</p>
+                                <p><i class="fas fa-info-circle text-info"></i> Description: ${product.description ? product.description : "N/A"}</p>
+                                <p><i class="fas fa-building text-secondary"></i> Brand: ${product.brand ? product.brand : "N/A"}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Append modal to the body
+                document.body.appendChild(modal);
+
+                // Add hover event with delay
+                let hoverTimeout;
+                div.addEventListener("mouseenter", () => {
+                    hoverTimeout = setTimeout(() => {
+                        const modalInstance = new bootstrap.Modal(document.getElementById(`modal-${product.id}`));
+                        modalInstance.show();
+                    }, 400); // delay
+                });
+
+                div.addEventListener("mouseleave", () => {
+                    clearTimeout(hoverTimeout);
+                });
+                listingProduct.appendChild(div);
+            });
+        }
+    </script>
+        <script type="module" src="./js/script.js"></script>
+    </body>
+</html>

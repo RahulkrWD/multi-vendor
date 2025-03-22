@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body::-webkit-scrollbar {
   width: 5px; 
 }
@@ -124,29 +128,6 @@ a, button{
   .sidebar .nav-link i {
     margin-right: 10px; /* Space between icon and text */
   }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar-custom .nav-links {
-      display: none; /* Hide nav links on mobile/tablet */
-    }
-
-    .navbar-custom .sidebar-toggle {
-      display: block; /* Show toggle button on mobile/tablet */
-    }
-    navbar-custom .search-container input {
-      width: 100%
-    }
-  
-
-  }
-
-  @media (max-width: 400px) {
-    .navbar-custom .navbar-brand .brand-text {
-      display: none; /* Hide title text on small screens */
-    }
-  }
-
 /* Footer Styles */
 .footer-content {
   background-color: #343a40; /* Dark background */
@@ -175,56 +156,141 @@ a, button{
   color: #007bff;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 767.98px) {
-  .footer-links li {
-      display: block;
-      margin: 10px 0;
-  }
-}
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+#carouselExampleAutoplaying {
+  height: 500px; /* Adjust this value as needed */
+  overflow: hidden; /* Ensure images don't overflow */
 }
 
-/* Circle images styling */
-.circle-image {
-  width: 120px; 
-  height: 120px; 
-  border-radius: 50%;
+/* Ensure images fill the carousel container */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid #ddd; 
-  transition: transform 0.3s ease;
-}
-.circle-image:hover {
-  transform: scale(1.1);
 }
 
-/* Scrollable circle images */
-.scrollable-circles {
+/* Featured products */
+#feature-product{
+  height: 50px;
+  background-color: #0056b3;
   display: flex;
-  overflow-x: auto;
-  gap: 30px; 
-  padding: 20px 0;
   justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  color: white;
+  font-weight: 500;
+  margin: 0;
 }
-.scrollable-circles::-webkit-scrollbar {
+
+.product-card h5 {
+  width: 245px;
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Listing product css */
+
+.product-scroll{
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  gap: 50px;
+}
+.product-scroll::-webkit-scrollbar{
   display: none;
 }
-
-/* Full-width image section */
-.full-width-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+.product-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-/* Product title styling */
-.product-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 10px;
+/* Ensure images are responsive */
+.product-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width:950px) {
+  .product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .product-card h5 {
+    width: 195px;
+    
+  }
+}
+
+
+
+/* Make the carousel responsive */
+@media (max-width: 768px) {
+  #carouselExampleAutoplaying {
+      height: 400px; /* Adjust height for smaller screens */
+  }
+  .footer-links li {
+    display: block;
+    margin: 10px 0;
+}
+
+.navbar-custom .nav-links {
+  display: none; /* Hide nav links on mobile/tablet */
+}
+
+.navbar-custom .sidebar-toggle {
+  display: block; /* Show toggle button on mobile/tablet */
+}
+.navbar-custom .search-container input {
+  width: 100%
+}
+
+.product-card img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.product-card h5 {
+  width: 165px;
+  
+}
+.product-card {
+  padding: 5px;
+  margin: 5px 0;
+}
+
+}
+
+@media (max-width: 576px) {
+  #carouselExampleAutoplaying {
+      height: 250px; /* Adjust height for mobile screens */
+  }
+  #feature-product{
+    font-size: 16px;
+    gap: 3vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-custom .navbar-brand .brand-text {
+    display: none; /* Hide title text on small screens */
+  }
+  #feature-product{
+    font-size: 13px;
+    gap: 3vw;
+  }
 }

@@ -7,7 +7,9 @@ import {
   editProfileForm,
   getProfile,
 } from "./auth.js";
+import { FeaturedProduct } from "./category.js";
 document.addEventListener("DOMContentLoaded", () => {
+  FeaturedProduct();
   checkUserLogin();
   let userId = localStorage.getItem("user");
   if (userId) {

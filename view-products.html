@@ -29,13 +29,11 @@
                   class="fas fa-filter"></i> Category</label>
               <select class="form-select" id="categoryFilter">
                 <option value>All Categories</option>
-                <option value="Footwears">Footwears</option>
-                <option value="Bracelet">Bracelet</option>
-                <option value="Bags">Bags</option>
-                <option value="Highlighter">Highlighter</option>
-                <option value="Wallets">Wallets</option>
-                <option value="Shampoo">Shampoo</option>
-                <option value="Others">Others</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Home">Home & Kitchen</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Sports">Sports</option>
               </select>
             </div>
             <div class="col-md-3">
@@ -228,9 +226,9 @@ document.getElementById("applyFilters").addEventListener("click", () => {
 
   // Sort by price
   if (priceSort === "low-to-high") {
-    filteredProducts.sort((a, b) => a.cost - b.cost);
+    filteredProducts.sort((a, b) => a.price - b.price);
   } else if (priceSort === "high-to-low") {
-    filteredProducts.sort((a, b) => b.cost - a.cost);
+    filteredProducts.sort((a, b) => b.price - a.price);
   }
 
   // Reset to the first page
