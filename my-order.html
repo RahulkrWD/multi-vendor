@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-commerce-my-order</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/my-order.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    </head>
+    <body>
+        <header>
+            <nav id="navbar"></nav>
+            <div class="feature-product-container">
+                <ul type="none" id="feature-product"></ul>
+            </div>
+        </header>
+        <main class="w-100" style="min-height: 90vh;">
+            <h3 class="mt-3 text-center text-primary-emphasis"><i
+                    class="fas fa-shopping-bag"></i> My
+                Orders</h3>
+            <div class="order-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Products</th>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                            <th>Total Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-placed-order">
+                        <tr>
+                            <td data-label="Order ID">#12345</td>
+                            <td data-label="Date">2023-10-01</td>
+                            <td data-label="Items">2</td>
+                            <td data-label="Total Amount">$150.00</td>
+                            <td data-label="Status"
+                                class="status delivered">Delivered</td>
+                            <td data-label="Action">
+                                <button class="action-btn view"><i
+                                        class="fas fa-eye"></i> View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer-content bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Copyright Section -->
+                    <div
+                        class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p class="mb-0">&copy; 2023 Shoppy. All rights
+                            reserved.</p>
+                    </div>
+
+                    <!-- Footer Links Section -->
+                    <div class="col-md-6">
+                        <ul
+                            class="footer-links list-inline text-center text-md-end mb-0">
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-shield-alt me-2"></i>Privacy
+                                    Policy</a></li>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-file-contract me-2"></i>Terms
+                                    of Service</a></li>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white text-decoration-none"><i
+                                        class="fas fa-envelope me-2"></i>Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+         let url = "https://multi-vendor-e-commerce-37b58-default-rtdb.asia-southeast1.firebasedatabase.app/";
+        document.addEventListener("DOMContentLoaded", ()=>{
+        })
+
+         function isUserLoggedIn(){
+                let userId = localStorage.getItem("user");
+                if(!userId){
+                    return window.location.href = "./login.html"
+                }
+
+            }
+                isUserLoggedIn()
+    </script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</html>

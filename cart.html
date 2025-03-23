@@ -48,7 +48,8 @@
                         <span><i class="fas fa-wallet icon m-2"></i>
                             Total:</span>
                         <span id="total">$0.00</span></p>
-                    <button class="btn btn-primary w-100"><i
+                    <button id="check-out-btn"
+                        class="btn btn-primary w-100"><i
                             class="fas fa-credit-card me-2"></i>Proceed to
                         Checkout</button>
                 </div>
@@ -145,8 +146,8 @@
             cart.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cart));
             displayCartItems();
+            checkoutFun()
         }
-
         // Update checkout summary
         function updateCheckoutSummary() {
             const subtotal = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
@@ -163,6 +164,20 @@
         // Initial display of cart items
         displayCartItems();
 
+        // Check out btn
+        let checkOutBtn = document.getElementById("check-out-btn");
+        checkOutBtn.addEventListener("click", ()=>{
+            window.location.href = "./check-out.html"
+        })
+        function checkoutFun(){
+        if(cart.length == 0){
+            checkOutBtn.disabled = true;
+        }else{
+            checkOutBtn.disabled = false;
+        }
+        }
+        checkoutFun()
+       
         function isUserLoggedIn() {
             let userId = localStorage.getItem("user");
             if (!userId) {

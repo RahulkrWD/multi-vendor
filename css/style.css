@@ -323,3 +323,34 @@ a, button{
     gap: 3vw;
   }
 }
+
+
+/* Navbar dropdown */
+
+/* Ensure dropdown items have a pointer cursor */
+.dropdown-toggle, .dropdown-item {
+  cursor: pointer;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dropdown-item {
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+}
+
+/* Ensure the navbar links have a pointer cursor */
+.nav-link {
+  cursor: pointer;
+}

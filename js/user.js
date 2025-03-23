@@ -8,47 +8,62 @@ export async function checkUserLogin() {
   if (loggedInUser) {
     nav.innerHTML = `
             <nav class="navbar-custom">
-                <!-- Brand/Logo -->
-                <a class="navbar-brand" href="index.html">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="brand-text">Shoppy</span>
-                </a>
+    <!-- Brand/Logo -->
+    <a class="navbar-brand" href="index.html">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="brand-text">Shoppy</span>
+    </a>
 
-                <!-- Search Bar -->
-                <div class="search-container">
-                    <i class="fas fa-search search-icon"></i>
-                    <input
-                        class="search"
-                        id="search"
-                        type="text"
-                        placeholder="Search brands..." />
-                    <!-- Search Results Container -->
-                    <div id="search-results" class="search-results"></div>
-                </div>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input
+            class="search"
+            id="search"
+            type="text"
+            placeholder="Search brands..." />
+        <!-- Search Results Container -->
+        <div id="search-results" class="search-results"></div>
+    </div>
 
-                <!-- Nav Links (Visible on Desktop) -->
-                <div class="nav-links">
-                    <a class="nav-link" href="./profile.html">
-                        <i class="fas fa-user"></i> Profile
-                    </a>
-                    <a class="nav-link" href="./cart.html">
-                        <i class="fas fa-shopping-cart"></i> Cart
-                    </a>
-                    <a class="nav-link" id="logoutBtn">
-                        <i class="fas fa-sign-out-alt"></i> LogOut
-                    </a>
-                </div>
+    <!-- Nav Links (Visible on Desktop) -->
+    <div class="nav-links">
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+            <div class="text-white dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" style="cursor: pointer;">
+                <i class="fas fa-user"></i> Profile
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="./profile.html" style="cursor: pointer;"><i class="fas fa-user m-2"></i> Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="./my-order.html" style="cursor: pointer;"><i class="fas fa-shopping-bag m-2"></i>  My Order</a></li>
+            </ul>
+        </div>
 
-                <!-- Sidebar Toggle Button (Visible on Mobile/Tablet) -->
-                <button class="sidebar-toggle" id="toggleSidebar">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+        <!-- Cart Link -->
+        <a class="nav-link" href="./cart.html">
+            <i class="fas fa-shopping-cart"></i> Cart
+        </a>
+
+        <!-- Logout Link -->
+        <a class="nav-link" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> LogOut
+        </a>
+    </div>
+
+    <!-- Sidebar Toggle Button (Visible on Mobile/Tablet) -->
+    <button class="sidebar-toggle" id="toggleSidebar">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
 
             <!-- Sidebar (Visible on Mobile/Tablet) -->
             <div class="sidebar" id="sidebar">
-                <a class="nav-link" href="profile.html">
+            <a class="nav-link" href="profile.html">
                     <i class="fas fa-user"></i> Profile
+                </a>
+                <a class="nav-link" href="./my-order.html">
+                   <i class="fas fa-shopping-bag"></i> My Order
                 </a>
                 <a class="nav-link" href="cart.html">
                     <i class="fas fa-shopping-cart"></i> Cart
