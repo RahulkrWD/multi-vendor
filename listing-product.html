@@ -66,8 +66,10 @@
             fetchProduct();
         });
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category');
+        const urlParamsCategory = new URLSearchParams(window.location.search);
+        const category = urlParamsCategory.get('category');
+        const urlParamsBrand = new URLSearchParams(window.location.search);
+        const brand = urlParamsBrand.get('brand');
 
         async function fetchProduct() {
             try {
@@ -79,12 +81,17 @@
                 console.log("Something went wrong while fetching products");
             }
         }
-
         function FilterByCategory(products) {
             let filteredProduct = [...products];
-            filteredProduct = filteredProduct.filter((product) => {
+            if(category){
+                filteredProduct = filteredProduct.filter((product) => {
                 return product.category === category;
             });
+            }else{
+                filteredProduct = filteredProduct.filter((product)=>{
+                return product.brand == brand;
+            })
+            }
             displayProducts(filteredProduct);
         }
 
