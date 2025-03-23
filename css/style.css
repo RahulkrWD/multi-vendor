@@ -158,7 +158,9 @@ a, button{
 
 
 #carouselExampleAutoplaying {
-  height: 500px; /* Adjust this value as needed */
+  max-height: 600px;
+  height: 30vw;
+  min-height: 200px;
   overflow: hidden; /* Ensure images don't overflow */
 }
 
@@ -239,9 +241,7 @@ a, button{
 
 /* Make the carousel responsive */
 @media (max-width: 768px) {
-  #carouselExampleAutoplaying {
-      height: 400px; /* Adjust height for smaller screens */
-  }
+
   .footer-links li {
     display: block;
     margin: 10px 0;
@@ -276,9 +276,9 @@ a, button{
 }
 
 @media (max-width: 576px) {
-  #carouselExampleAutoplaying {
-      height: 250px; /* Adjust height for mobile screens */
-  }
+  /* #carouselExampleAutoplaying {
+      height: 40vh;
+  } */
   #feature-product{
     font-size: 16px;
     gap: 3vw;

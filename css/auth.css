@@ -1,5 +1,5 @@
 .auth-container{
-    height: 90vh;
+    min-height: 90vh;
 }
 .card {
     border: none;
