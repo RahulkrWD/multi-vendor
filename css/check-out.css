@@ -90,38 +90,30 @@ body {
     background-color: #218838;
 }
 
+/* Custom styles for the success modal */
+#successModal .modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
-.success-modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 1000;
-    width: 400px; /* Increased width */
+#successModal .modal-header {
+    border-bottom: none;
+    background-color: #f8f9fa;
+    border-radius: 10px 10px 0 0;
 }
-.success-modal i {
-    font-size: 60px; /* Increased icon size */
-    color: green;
-    margin-bottom: 20px;
+
+#successModal .modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
-.success-modal p {
-    font-size: 24px; /* Increased font size */
-    margin-top: 10px;
+
+#successModal .modal-body {
+    font-size: 1rem;
 }
-.success-modal .countdown {
-    font-size: 18px; /* Increased font size */
-    color: gray;
-    margin-top: 10px;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .checkout-container {
-        grid-template-columns: 1fr;
-    }
+
+#successModal .modal-footer {
+    border-top: none;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
 }

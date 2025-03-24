@@ -37,19 +37,6 @@
                         </tr>
                     </thead>
                     <tbody id="list-placed-order">
-                        <tr>
-                            <td data-label="Order ID">#12345</td>
-                            <td data-label="Date">2023-10-01</td>
-                            <td data-label="Items">2</td>
-                            <td data-label="Total Amount">$150.00</td>
-                            <td data-label="Status"
-                                class="status delivered">Delivered</td>
-                            <td data-label="Action">
-                                <button class="action-btn view"><i
-                                        class="fas fa-eye"></i> View</button>
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -89,19 +76,112 @@
         </footer>
     </body>
     <script>
-         let url = "https://multi-vendor-e-commerce-37b58-default-rtdb.asia-southeast1.firebasedatabase.app/";
-        document.addEventListener("DOMContentLoaded", ()=>{
-        })
+    let url = "https://multi-vendor-e-commerce-37b58-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
-         function isUserLoggedIn(){
-                let userId = localStorage.getItem("user");
-                if(!userId){
-                    return window.location.href = "./login.html"
-                }
+document.addEventListener("DOMContentLoaded", () => {
+    FetchOrderProduct();
+    isUserLoggedIn();
+});
 
-            }
-                isUserLoggedIn()
-    </script>
+let filteredOrder = [];
+
+async function FetchOrderProduct() {
+    // Fetch the ordered products
+    let response = await fetch(`${url}/orders.json`);
+    let data = await response.json();
+
+    // Convert into an array of objects
+    let productArray = data ? Object.entries(data).map(([id, data]) => ({ id, ...data })) : [];
+
+    // Filter the ordered products by the user ID
+    let userId = localStorage.getItem("user");
+    filteredOrder = productArray.filter((product) => product.userID === userId);
+
+    // Display the filtered products
+    GetProductDetails(filteredOrder);
+}
+
+function GetProductDetails(products) {
+    let productID = [];
+    let quantityArray = [];
+    let orderArray = []; // Store the corresponding order for each product
+
+    // Extract product IDs, quantities, and associate them with their orders
+    for (let i = 0; i < products.length; i++) {
+        let productIds = Array.isArray(products[i].productId) ? products[i].productId : [products[i].productId];
+        let quantities = Array.isArray(products[i].Quantity) ? products[i].Quantity : [products[i].Quantity];
+        for (let j = 0; j < productIds.length; j++) {
+            productID.push(productIds[j]);
+            quantityArray.push(quantities[j]);
+            orderArray.push(products[i]); // Associate each product with its order
+        }
+    }
+
+    // Display products
+    DisplayProduct(productID, quantityArray, orderArray);
+}
+
+async function DisplayProduct(products, quantities, orders) {
+    let tbody = document.getElementById("list-placed-order");
+    tbody.innerHTML = "";
+    
+    if (products.length > 0 && quantities.length > 0) {
+        // Create a document fragment to batch append rows
+        let fragment = document.createDocumentFragment();
+
+        // Fetch all product details in parallel
+        let productDetailsPromises = products.map((productId) => fetchProductDetails(productId));
+        let productDetails = await Promise.all(productDetailsPromises);
+
+        // Loop through each product and its corresponding order
+        for (let i = 0; i < products.length; i++) {
+            let productId = products[i];
+            let quantity = quantities[i];
+            let details = productDetails[i];
+            let order = orders[i]; // Get the corresponding order for this product
+
+            // Create a new row
+            let row = document.createElement("tr");
+
+            // Add product details to the row using innerHTML
+            row.innerHTML = `
+                <td data-label="Products">
+                    <img src="${details.image}" alt="${details.name}" style="width: 50px; height: 50px;">
+
+                </td>
+                <td data-label="Date">${new Date(order.orderDate).toLocaleString()}</td>
+                <td data-label="Quantity">${quantity || 1}</td>
+                <td data-label="Total Amount">$${(quantity * details.price).toFixed(2)}</td>
+                <td data-label="Status" class="status placed">${order.status || "Pending"}</td>
+                <td data-label="Action">
+                    <button class="action-btn view"><i class="fas fa-eye"></i> View</button>
+                </td>
+            `;
+
+            fragment.appendChild(row);
+        }
+        tbody.appendChild(fragment);
+    } else {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td colspan="6" class="text-center">No orders found.</td>
+        `;
+        tbody.appendChild(row);
+    }
+}
+
+async function fetchProductDetails(productId) {
+    let response = await fetch(`${url}/products/${productId}.json`);
+    let data = await response.json();
+    return data || {};
+}
+function isUserLoggedIn() {
+    let userId = localStorage.getItem("user");
+    if (!userId) {
+        window.location.href = "./login.html";
+    }
+}
+   </script>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./js/script.js"></script>

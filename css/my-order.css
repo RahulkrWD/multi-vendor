@@ -48,6 +48,10 @@ body {
 .order-table .status.cancelled {
     color: #dc3545;
 }
+.order-table .status.placed {
+    color: #2727ed;
+}
+
 
 .order-table .action-btn {
     padding: 5px 10px;
