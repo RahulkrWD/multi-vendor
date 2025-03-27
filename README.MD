@@ -37,9 +37,9 @@ A complete e-commerce solution with separate interfaces for vendors and customer
    ## 📸 Screenshots
 
 ### Customer Interface
-![home page](./screenshoot/homepage.png);
-![home page](./screenshoot/homepage_produt.png);
-![home page](./screenshoot/selle-homepage.png);
-![home page](./screenshoot/seller-homepagelogin.png);
+![home page](./screenshoot/homepage.png)
+![home page](./screenshoot/homepage_produt.png)
+![home page](./screenshoot/selle-homepage.png)
+![home page](./screenshoot/seller-homepagelogin.png)
 
 
