@@ -43,3 +43,7 @@ A complete e-commerce solution with separate interfaces for vendors and customer
 ![home page](./screenshoot/seller-homepagelogin.png)
 
 
+### Video presentation link of project
+[Video link](https://drive.google.com/file/d/1nmInGK966Vh6OV_9RCP_9dU1Z_Viac1v/view?usp=sharing)
+
+
